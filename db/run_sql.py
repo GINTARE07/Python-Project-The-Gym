@@ -2,8 +2,9 @@ import psycopg2
 import psycopg2.extras
 
 def run_sql(sql, values = None):
-    results = []
     conn = None
+    results = []
+
     try:
         conn = psycopg2.connect("dbname='gym_manager'")
         cur = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
