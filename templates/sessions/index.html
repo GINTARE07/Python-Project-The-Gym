@@ -3,6 +3,12 @@
 
 <h2>Sessions</h2>
     <p> Here you can see session information</p>
+    {% for session in sessions %}
 
-
+    <section>
+        <p>{{ session.name }}</p>
+        <a href="/sessions/{{ session.id }}/edit">Edit</a>
+       
+    </section>
+    {% endfor %}
 {% endblock %}

@@ -24,7 +24,7 @@ member5 = Member("Daisy Kelpes", "Basic")
 member_repository.save(member5)
 
 
-session1 = Session("Pupm", 30, "Morning")
+session1 = Session("Pump", 30, "Morning")
 session_repository.save(session1)
 
 session2 = Session("Cycle", 30, "Morning")
