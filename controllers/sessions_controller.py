@@ -35,7 +35,11 @@ def update_session(id):
     session_repository.update(session)
     return redirect("/sessions")
 
-# CREATE
-# EDIT
-# UPDATE
 # DELETE
+
+@sessions_blueprint.route("/sessions/<id>/delete", methods=["POST"])
+def delete_session(id):
+    session_repository.delete(id)
+    return redirect("/sessions")
+
+
