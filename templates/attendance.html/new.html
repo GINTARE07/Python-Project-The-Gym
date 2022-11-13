@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Add attendance</h2>
+
+<form action="/attendance" method="POST">
+    <div>
+        <label for="member">Member:</label>
+        <select name="member_id" id="member">
+            {% for member in members %}
+            <option value="{{ member.id }}">
+                {{ member.full_name }}
+            </option>
+            {% endfor %}
+        </select>
+    </div>
+    <div>
+        <label for="session">Session:</label>
+        <select name="sessions_id" id="session">
+            {% for session in sessions %}
+            <option value="{{ session.id }}">
+                {{ session.name }}
+            </option>
+            {% endfor %}
+        </select>
+    </div>
+    <div>
+        <input type="submit">
+    </div>
+</form>
+
+{% endblock %}

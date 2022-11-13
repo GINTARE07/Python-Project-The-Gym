@@ -9,7 +9,7 @@ def save(member):
     sql = "INSERT INTO members (full_name, membership_type) VALUES (%s, %s) RETURNING id"
     values = [member.full_name, member.membership_type]
     results = run_sql(sql, values)
-    id = results[0]['id']
+    id = results[0]["id"]
     member.id = id
     return member
 

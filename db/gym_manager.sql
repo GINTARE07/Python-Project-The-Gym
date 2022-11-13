@@ -1,5 +1,7 @@
 DROP TABLE IF EXISTS members;
 DROP TABLE IF EXISTS sessions;
+DROP TABLE IF EXISTS attendance;
+
 
 CREATE TABLE members (
     id SERIAL PRIMARY KEY,
@@ -13,4 +15,14 @@ CREATE TABLE sessions (
     capacity INT,
     part_of_day VARCHAR(255)
 );
+
+CREATE TABLE attendance (
+    id SERIAL PRIMARY KEY,
+    members_id INT NOT NULL REFERENCES members(id),
+    sessions_id INT NOT NULL REFERENCES sessions(id)
+);
+
+
+
+
 
