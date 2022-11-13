@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Add a New Session</h2>
+
+<form action="/sessions" method="POST">
+    <div>
+        <label for="session">Session name:</label>
+        <input id="text" id="name" name="name">
+        <label for="part_of_day">Part of day:</label>
+        <select id="part_of_day" name="part_of_day" size="3">
+            <option value="Morning">Morning</option>
+            <option value="Afternoon">Afternoon</option>
+            <option value="Evening">Evening</option>
+        </select>
+        <label for="capacity">Capacity:</label>
+        <input id="text" id="capacity" name="capacity"
+        <input type="submit">
+    </div>
+</form>
+
+{% endblock %}

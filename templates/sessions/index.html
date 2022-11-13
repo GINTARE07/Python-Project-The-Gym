@@ -6,7 +6,12 @@
     {% for session in sessions %}
 
     <section>
+    <h3>Session name:</h3>
         <p>{{ session.name }}</p>
+        <h4>Happening:</h4>
+        <p>{{session.part_of_day}}</p>
+        <h4>Places:</h4>
+        <p>{{session.capacity}}</p>
         <a href="/sessions/{{ session.id }}/edit">Edit</a>
        
     </section>

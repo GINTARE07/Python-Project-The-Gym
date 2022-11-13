@@ -6,9 +6,14 @@
     {% for member in members %}
 
     <section>
+    <h3>Member name:</h3>
         <p>{{ member.full_name }}</p>
+        <h4>Membership type:</h4>
+        <p>{{member.membership_type}}</p>
         <a href="/members/{{ member.id }}/edit">Edit</a>
        
     </section>
     {% endfor %}
+
+
 {% endblock %}
