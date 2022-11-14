@@ -17,6 +17,16 @@ def sessions():
 def new_member():
     return render_template("/sessions/new.html")
 
+# CREATE
+@sessions_blueprint.route("/sessions", methods=["POST"])
+def create_session():
+    name = request.form["name"]
+    capacity = request.form["capacity"]
+    part_of_day = request.form["part_of_day"]
+    new_session = Session(name, capacity, part_of_day)
+    session_repository.save(new_session)
+    return redirect("/sessions")
+
 
 # EDIT
 @sessions_blueprint.route("/sessions/<id>/edit")

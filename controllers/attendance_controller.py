@@ -11,19 +11,22 @@ attendance_blueprint = Blueprint("attendances", __name__)
 # INDEX
 @attendance_blueprint.route("/attendances")
 def attendance():
-    attendance = attendance_repository.select_all()
-    return render_template("attendances/index.html", attendance=attendance)
+    attendances = attendance_repository.select_all()
+    return render_template("attendances/index.html", attendances=attendances)
 
-# # NEW
-# @members_blueprint.route("attendance"/new")
-# def new_attendance():
-#     return render_template("/attendance/new.html")
+# NEW
+@attendance_blueprint.route("/attendances/new")
+def new_attendance():
+    # get all members
+    members = member_repository.select_all()
+    sessions = session_repository.select_all()
+    return render_template("/attendances/new.html", members=members, sessions=sessions)
 
 # CREATE
 @attendance_blueprint.route("/attendances", methods=["POST"])
 def create_attendance():
-    member = member_repository.select(request.form["members_id"])
-    session = session_repository.select(request.form["sessions_id"])
+    member = member_repository.select(request.form["member_id"])
+    session = session_repository.select(request.form["session_id"])
     new_attendance = Attendance(member, session)
     attendance_repository.save(new_attendance)
     return redirect("/attendances")

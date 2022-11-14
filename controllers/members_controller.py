@@ -21,6 +21,7 @@ def new_member():
 def create_member():
     full_name = request.form["full_name"]
     membership_type = request.form["membership_type"]
+
     new_member = Member(full_name, membership_type)
     member_repository.save(new_member)
     return redirect("/members")

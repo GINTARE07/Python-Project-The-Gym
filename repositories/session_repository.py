@@ -5,10 +5,10 @@ from models.member import Member
 import repositories.member_repository as member_repository
 
 def save(session):
-    sql = "INSERT INTO sessions (name, capacity, part_of_day) VALUES (%s, %s, %s) RETURNING *"
+    sql = "INSERT INTO sessions (name, capacity, part_of_day) VALUES (%s, %s, %s) RETURNING id"
     values = [session.name, session.capacity, session.part_of_day]
     results = run_sql(sql, values)
-    id = results[0]['id']
+    id = results[0]["id"]
     session.id = id
     return session
 
@@ -19,7 +19,6 @@ def select_all():
     sql = "SELECT * FROM sessions"
     results = run_sql(sql)
     for result in results:
-        
         session = Session(result["name"], result["capacity"], result["part_of_day"], result["id"])
         sessions.append(session)
     return sessions

@@ -16,7 +16,7 @@ def save(member):
 def select_all():
     members = []
 
-    sql = "SELECT * FROM members"
+    sql = "SELECT * FROM members ORDER BY full_name"
     results = run_sql(sql)
     for result in results:
         

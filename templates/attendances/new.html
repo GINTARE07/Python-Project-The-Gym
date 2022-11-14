@@ -3,7 +3,7 @@
 
 <h2>Add attendance</h2>
 
-<form action="/attendance" method="POST">
+<form action="/attendances" method="POST">
     <div>
         <label for="member">Member:</label>
         <select name="member_id" id="member">
@@ -16,7 +16,7 @@
     </div>
     <div>
         <label for="session">Session:</label>
-        <select name="sessions_id" id="session">
+        <select name="session_id" id="session">
             {% for session in sessions %}
             <option value="{{ session.id }}">
                 {{ session.name }}
