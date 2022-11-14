@@ -2,7 +2,7 @@ body{
     font-family: "Helvetica", arial, sans-serif;
     font-size: 14px;
     color: rgb(217, 251, 251);
-    background-color: rgb(9, 96, 96);
+    background-color: rgb(219, 216, 127);
     text-align:justify;
     display: flex;
     flex-direction: column;
@@ -42,4 +42,15 @@ footer{
     margin:0;
     color:green;
 
+}
+
+#sessions{
+    margin:0;
+    color:green;
+
+}
+
+#attendance{
+    margin:0;
+    color:green;
 }

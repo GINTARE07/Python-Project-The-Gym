@@ -3,22 +3,22 @@
 
 <h2>Update session details</h2>
 
-<form action="/session/{{session.id}}" method = "POST">
+<form action="/sessions/{{session.id}}" method = "POST">
     <div>
         <label for ="name">Name:</label>
         <input type="text" id="name" name="name" value="{{session.name}}">
+        <label for="capacity">Capacity:</label>
+        <input type="text" id="capacity" name="capacity" value="{{session.capacity}}">
         <label for ="part_of_day">Part of day:</label>
         <select id="part_of_day" name="part_of_day" size="3">
             <option value="Morning">Morning</option>
             <option value="Afternoon">Afternoon</option>
             <option value="Evening">Evening</option>
         </select>
-        <label for="capacity">Capacity:</label>
-        <input type="text" id="capacity" name="capacity" value="{{session.capacity}}">
     </div>
     <div>
         <input type="submit">
     </div>
 </form>
 
-{% endblock %}
+{% endblock %} 

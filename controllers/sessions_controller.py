@@ -14,7 +14,7 @@ def sessions():
 
 # NEW
 @sessions_blueprint.route("/sessions/new")
-def new_member():
+def new_session():
     return render_template("/sessions/new.html")
 
 # CREATE
@@ -30,7 +30,7 @@ def create_session():
 
 # EDIT
 @sessions_blueprint.route("/sessions/<id>/edit")
-def edit_member(id):
+def edit_session(id):
     sessions = session_repository.select(id)
     return render_template("sessions/edit.html", session = sessions)
 
@@ -39,9 +39,9 @@ def edit_member(id):
 @sessions_blueprint.route("/sessions/<id>", methods=["POST"])
 def update_session(id):
     name = request.form["name"]
-    part_of_day = request.form["part of day"]
     capacity = request.form["capacity"]
-    session = Session(name, part_of_day, capacity, id)
+    part_of_day = request.form["part_of_day"]
+    session = Session(name, capacity, part_of_day, id)
     session_repository.update(session)
     return redirect("/sessions")
 
