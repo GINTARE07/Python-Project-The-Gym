@@ -16,7 +16,7 @@ def save(member):
 def select_all():
     members = []
 
-    sql = "SELECT * FROM members ORDER BY full_name"
+    sql = "SELECT * FROM members"
     results = run_sql(sql)
     for result in results:
         
@@ -50,6 +50,6 @@ def delete(id):
 
 
 def update(member):
-    sql = "UPDATE members SET (full_name, membership_type) = (%s, %s) WHERE id = %s"
+    sql = "UPDATE member SET (full_name, membership_type) = (%s, %s) WHERE id = %s"
     values = [member.full_name, member.membership_type, member.id]
     run_sql(sql, values)

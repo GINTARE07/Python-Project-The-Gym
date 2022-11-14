@@ -7,6 +7,7 @@
         <section>
             <h3>Member name:</h3>
             <p>{{ attendance.member.full_name }} attended {{attendance.session.name}}</p>
+            <a href="/attendances/new">Add</a>
             <a href="/attendances/{{ attendance.id }}/edit">Edit</a>  
         </section>
     {% endfor %}
