@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS members;
-DROP TABLE IF EXISTS sessions;
+DROP TABLE IF EXISTS members CASCADE;
+DROP TABLE IF EXISTS sessions CASCADE;
 DROP TABLE IF EXISTS attendance;
 
 
@@ -18,12 +18,8 @@ CREATE TABLE sessions (
 
 CREATE TABLE attendance (
     id SERIAL PRIMARY KEY,
-    members_id SERIAL NOT NULL REFERENCES members(id),
-    sessions_id SERIAL NOT NULL REFERENCES sessions(id)
+    members_id INT NOT NULL REFERENCES members(id) ON DELETE CASCADE,
+    sessions_id INT NOT NULL REFERENCES sessions(id) ON DELETE CASCADE
 );
-ALTER TABLE dbo.members DROP CONSTRAINT FK_
-
-
-
 
 

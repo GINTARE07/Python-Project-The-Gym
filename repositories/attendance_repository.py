@@ -8,7 +8,7 @@ import repositories.member_repository as member_repository
 
 
 def save(attendance):
-    sql = "INSERT INTO attendance (member_id, sessions_id) VALUES (%s, %s) RETURNING id"
+    sql = "INSERT INTO attendance (members_id, sessions_id) VALUES (%s, %s) RETURNING id"
     values = [attendance.member.id, attendance.session.id]
     results = run_sql(sql, values)
     id = results[0]["id"]

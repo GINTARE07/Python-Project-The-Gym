@@ -81,7 +81,7 @@ body{
     justify-content: center;
     padding-top: 100px;
     padding-bottom: 100px;
-    background-image: url("/static/img/main.jpeg"); 
+    background-image: url("/static/img/one.jpg"); 
     background-size: cover; 
     background-blend-mode: lighten;
 }

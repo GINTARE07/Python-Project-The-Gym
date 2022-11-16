@@ -49,9 +49,4 @@ def delete_member(id):
     member_repository.delete(id)
     return redirect("/members")
 
-# find member by id
 
-# @members_blueprint.route("/members/<id>")
-# def view_member(id):
-#     show_member = member_repository.select(id)
-#     return render_template('member/show_member.html', member=show_member, bite_victims = bite_victims)

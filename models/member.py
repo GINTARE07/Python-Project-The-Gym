@@ -3,3 +3,7 @@ class Member:
         self.full_name = full_name
         self.membership_type = membership_type
         self.id = id
+
+    # def member_name(self):
+    #     name = name(self.members[1])
+        
