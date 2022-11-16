@@ -15,7 +15,7 @@ def attendance():
     return render_template("attendances/index.html", attendances=attendances)
 
 # NEW
-@attendance_blueprint.route("/attendances/new")
+@attendance_blueprint.route("/attendances/new", methods=["GET"])
 def new_attendance():
     # get all members
     members = member_repository.select_all()
@@ -23,41 +23,29 @@ def new_attendance():
     return render_template("/attendances/new.html", members=members, sessions=sessions)
 
 # CREATE
-@attendance_blueprint.route("/attendances", methods=["POST"])
+@attendance_blueprint.route("/attendances/new", methods=["POST"])
 def create_attendance():
-    member = member_repository.select(request.form["member_id"])
-    session = session_repository.select(request.form["session_id"])
+    member = request.form["member_id"]
+    session = request.form["session_id"]
     new_attendance = Attendance(member, session)
     attendance_repository.save(new_attendance)
     return redirect("/attendances")
 
-# # EDIT
-# @members_blueprint.route("/members/<id>/edit")
-# def edit_member(id):
-#     member = member_repository.select(id)
-#     return render_template('members/edit.html', member = member)
+# EDIT
+@attendance_blueprint.route("/attendances/<id>/edit", methods=["GET"])
+def edit_attendance(id):
+    attendance = attendance_repository.select(id)
+    members = member_repository.select_all()
+    sessions = session_repository.select_all()
+    return render_template("attendances/edit.html", attendance = attendance, members = members, sessions = sessions)
 
-# # UPDATE
+# UPDATE
 
-# @members_blueprint.route("/members/<id>", methods=["POST"])
-# def update_member(id):
+@attendance_blueprint.route("/attendances/<id>", methods=["POST"])
+def updated_attendance(id):
 
-#     full_name = request.form["full_name"]
-#     membership_type = request.form["membership_type"]
-#     member = Member(full_name, membership_type, id)
-#     member_repository.update(member)
-#     return redirect("/members")
-
-# # DELETE
-
-# @members_blueprint.route("/members/<id>/delete", methods=["POST"])
-# def delete_member(id):
-#     member_repository.delete(id)
-#     return redirect("/members")
-
-# # find member by id
-
-# @members_blueprint.route("/members/<id>")
-# def view_member(id):
-#     show_member = member_repository.select(id)
-#     return render_template('member/show_member.html', member=show_member, bite_victims = bite_victims)
+    member = member_repository.select(request.form["member_id"])
+    session = session_repository.select(request.form["session_id"])
+    updated_attendance = Attendance(member, session, id)
+    attendance_repository.update(updated_attendance)
+    return redirect("/attendances")

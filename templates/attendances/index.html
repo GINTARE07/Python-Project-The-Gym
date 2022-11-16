@@ -1,14 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>Attendance</h2>
-    <p> Here you can see attendance information</p>
+<h1 class="column1">Attendance</h1>
+    <h2 class="column2"> Here you can see attendance information</h2>
+    <li>
+        <a href="/attendances/new"><i class="fa-solid fa-plus"></i><i class="fa-solid fa-list-check"></i></a>
+    </li>
     {% for attendance in attendances %}
-        <section id="attendance">
+        <section class="column3">
             <h3>Member name:</h3>
             <p>{{ attendance.member.full_name }} attended {{attendance.session.name}}</p>
-            <a href="/attendances/new">Add</a>
-            <a href="/attendances/{{ attendance.id }}/edit">Edit</a>  
+            <form action="/attendances/{{ attendance.id }}/edit" method="GET">
+                <input type="submit" value="Edit attendance">
+            </form>
         </section>
     {% endfor %}
 

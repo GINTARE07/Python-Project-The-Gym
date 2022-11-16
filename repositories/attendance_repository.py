@@ -8,7 +8,7 @@ import repositories.member_repository as member_repository
 
 
 def save(attendance):
-    sql = "INSERT INTO attendance (members_id, sessions_id) VALUES (%s, %s) RETURNING *"
+    sql = "INSERT INTO attendance (member_id, sessions_id) VALUES (%s, %s) RETURNING id"
     values = [attendance.member.id, attendance.session.id]
     results = run_sql(sql, values)
     id = results[0]["id"]
@@ -44,18 +44,9 @@ def select(id):
      
     return attendance
 
-# def delete_all():
-#     sql = "DELETE FROM members"
-#     run_sql(sql)
-
-
-# def delete(id):
-#     sql = "DELETE FROM members WHERE id = %s"
-#     values = [id]
-#     run_sql(sql, values)
-
-
-# def update(member):
-#     sql = "UPDATE members SET (full_name, membership_type) = (%s, %s) WHERE id = %s"
-#     values = [member.full_name, member.membership_type, member.id]
-#     run_sql(sql, values)
+def update(attendances):
+    member = member_repository.select["members_id"]
+    session = session_repository.select["sessions_id"]
+    sql = "UPDATE attendances SET (member, session) = (%s, %s) WHERE id = %s"
+    values = [member.full_name, session._name, attendances.id]
+    run_sql(sql, values)

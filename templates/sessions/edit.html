@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>Update session details</h2>
+<h1 class="column1">Update session details</h1>
 
-<form action="/sessions/{{session.id}}" method = "POST">
+<form action="/sessions/{{session.id}}/edit" method = "POST">
     <div>
         <label for ="name">Name:</label>
         <input type="text" id="name" name="name" value="{{session.name}}">

@@ -18,9 +18,10 @@ CREATE TABLE sessions (
 
 CREATE TABLE attendance (
     id SERIAL PRIMARY KEY,
-    members_id INT NOT NULL REFERENCES members(id),
-    sessions_id INT NOT NULL REFERENCES sessions(id)
+    members_id SERIAL NOT NULL REFERENCES members(id),
+    sessions_id SERIAL NOT NULL REFERENCES sessions(id)
 );
+ALTER TABLE dbo.members DROP CONSTRAINT FK_
 
 
 

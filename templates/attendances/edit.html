@@ -1,9 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1 class="column1">Add attendance</h1>
+<h1 class="column1">Update attendance details</h1>
 
-<form action="/attendances/new" method="POST">
+
+<form action="/attendances/{{attendance.id}}/edit" method="POST">
     <div>
         <label for="member">Member:</label>
         <select name="member_id" id="member">
@@ -28,5 +29,6 @@
         <input type="submit">
     </div>
 </form>
+
 
 {% endblock %}

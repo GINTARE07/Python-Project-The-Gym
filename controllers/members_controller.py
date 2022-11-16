@@ -12,7 +12,7 @@ def members():
     return render_template("members/index.html", members=members)
 
 # NEW
-@members_blueprint.route("/members/new")
+@members_blueprint.route("/members/new", methods=["GET"])
 def new_member():
     return render_template("/members/new.html")
 
@@ -27,7 +27,7 @@ def create_member():
     return redirect("/members")
 
 # EDIT
-@members_blueprint.route("/members/<id>/edit")
+@members_blueprint.route("/members/<id>/edit", methods=["GET"])
 def edit_member(id):
     member = member_repository.select(id)
     return render_template('members/edit.html', member = member)
@@ -36,7 +36,6 @@ def edit_member(id):
 
 @members_blueprint.route("/members/<id>", methods=["POST"])
 def update_member(id):
-
     full_name = request.form["full_name"]
     membership_type = request.form["membership_type"]
     member = Member(full_name, membership_type, id)

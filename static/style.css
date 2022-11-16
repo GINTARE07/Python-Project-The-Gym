@@ -3,8 +3,8 @@ body{
     font-size: 14px;
     color: rgb(217, 251, 251);
     background-color: rgb(219, 216, 127);
-    margin: 0px;
-    padding: 8px;
+    margin: 0%;
+    padding:0%
    
      
     
@@ -79,9 +79,9 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-top: 200px;
-    padding-bottom: 200px;
-    background-image: url("../img/main.png"); 
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-image: url("/static/img/main.jpeg"); 
     background-size: cover; 
     background-blend-mode: lighten;
 }
@@ -89,7 +89,7 @@ body{
 .footer{
     background-color: rgb(238, 194, 129);
     border: solid purple 2px;
-    /* grid-template-columns: repeat(3, 30%); */
+    
     padding: 1rem;
     display: flex;
     flex-direction: row;
@@ -134,19 +134,24 @@ footer div p {
     width: 100%;
     flex: 1;
 }
-#members{
-    margin:0;
+.column3{
+    margin-left: 20px;
     color:green;
+    
+    flex-direction: column;
+    
+}
+.column1{
+    font-size: 26;
+    color:rgb(54, 23, 23);
+    margin-left: 20px;
+
 
 }
-
-#sessions{
-    margin:0;
-    color:green;
-
+.column2{
+    font-size: 20;
+    color:rgb(94, 41, 41);
+    margin-left: 20px;
 }
 
-#attendance{
-    margin:0;
-    color:green;
-}
+

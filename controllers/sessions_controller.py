@@ -13,7 +13,7 @@ def sessions():
     return render_template("sessions/index.html", sessions=sessions)
 
 # NEW
-@sessions_blueprint.route("/sessions/new")
+@sessions_blueprint.route("/sessions/new", methods=["GET"])
 def new_session():
     return render_template("/sessions/new.html")
 
@@ -29,7 +29,7 @@ def create_session():
 
 
 # EDIT
-@sessions_blueprint.route("/sessions/<id>/edit")
+@sessions_blueprint.route("/sessions/<id>/edit", methods=["GET"])
 def edit_session(id):
     sessions = session_repository.select(id)
     return render_template("sessions/edit.html", session = sessions)
