@@ -7,8 +7,6 @@ body{
     padding:0%
 }
 
-
-
 .header ul{
 
     font-size: 18px;
@@ -33,6 +31,7 @@ body{
     margin-left: 30px;
     justify-content: center;
     font-size:  32px;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
     color: rgb(245, 243, 242);
     
 }
@@ -44,13 +43,10 @@ body{
     height: 250px;
     margin: 20px;
     border-radius:  50%;
-    
-    
 }
 
 .header{
-    
-    /* padding-top: 30px; */
+
     justify-content: center;
     padding-bottom: 0px;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', sans-serif;
@@ -75,8 +71,9 @@ body{
     flex-direction: row;
     justify-content:space-around;
     padding-top: 50px;
-    color:aliceblue;
-    border: solid red 2px;
+    color:rgb(61, 65, 68);
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 18px;
     padding-left: 50px;
     background-size: cover; 
     background-blend-mode: multiply;
@@ -130,24 +127,92 @@ footer div p {
     width: 100%;
     flex: 1;
 }
+
+#column2{
+    font-size: 26;
+    color:rgb(71, 32, 32);
+    margin-left: 20px;
+}
+#column3{
+    font-size: 26;
+    color:rgb(71, 32, 32);
+    margin-left: 20px;
+}
+#column4{
+    font-size: 26;
+    color:rgb(71, 32, 32);
+    margin-left: 20px;
+}
+.column1{
+    font-size: 20;
+    color:rgb(94, 41, 41);
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 40px;;
+    flex-direction: row;
+    display: flex;
+    background-size: cover; 
+    background-blend-mode: multiply;
+}
 .column3{
     margin-left: 20px;
     color:green;
-    
-    flex-direction: column;
+    justify-content: space-around;
+    flex-direction: row;
     
 }
-.column1{
-    font-size: 26;
-    color:rgb(54, 23, 23);
-    margin-left: 20px;
 
-
-}
-.column2{
-    font-size: 20;
+.column4{
+    font-size: 14px;
     color:rgb(94, 41, 41);
+    padding-left: 20px;
+    padding-right: 40px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    flex-direction: row;
+    display: flex;
+    background-size: cover; 
+    background-blend-mode: multiply;
     margin-left: 20px;
+    color: olive;
+    justify-content: space-between;
+    align-items:center;  
 }
 
+#new_member{
+    font-size: 26;
+    color:rgb(71, 32, 32);
+    margin-left: 20px;
+}
+.column5{
+    font-size: 14px;
+    color:rgb(94, 41, 41);
+    padding-left: 20px;
+    padding-right: 40px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    flex-direction: row;
+    display: flex;
+    background-size: cover; 
+    background-blend-mode: multiply;
+    margin-left: 20px;
+    color: olive;
+    /* justify-content: space-around; */
+    align-items:center; 
+}
 
+#edit_member{
+    font-size: 26;
+    color:rgb(71, 32, 32);
+    margin-left: 20px; 
+}
+#new_session{
+    font-size: 26;
+    color:rgb(71, 32, 32);
+    margin-left: 20px; 
+}
+#edit_atd{
+    font-size: 26;
+    color:rgb(71, 32, 32);
+    margin-left: 20px; 
+}

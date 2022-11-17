@@ -1,34 +1,40 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1 class="column1">Update attendance details</h1>
-
-
-<form action="/attendances/{{attendance.id}}/edit" method="POST">
-    <div>
-        <label for="member">Member:</label>
-        <select name="member_id" id="member">
-            {% for member in members %}
-            <option value="{{ member.id }}">
-                {{ member.full_name }}
-            </option>
-            {% endfor %}
-        </select>
-    </div>
-    <div>
-        <label for="session">Session:</label>
-        <select name="session_id" id="session">
-            {% for session in sessions %}
-            <option value="{{ session.id }}">
-                {{ session.name }}
-            </option>
-            {% endfor %}
-        </select>
-    </div>
-    <div>
-        <input type="submit">
-    </div>
-</form>
-
+<h1 id="edit_atd">Update attendance details
+    <section class="column5">
+        <form action="/attendances/{{attendance.id}}/edit" method="POST">
+            <div>
+                <label for="member">Member:</label>
+                <select name="member_id" id="member">
+                    {% for member in members %}
+                    <option value="{{ member.id }}">
+                        {{ member.full_name }}
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div>
+                <label for="session">Session:</label>
+                <select name="session_id" id="session">
+                    {% for session in sessions %}
+                    <option value="{{ session.id }}">
+                        {{ session.name }}
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div>
+                <input type="submit">
+            </div>
+        </form>
+        <div>
+            <ul>
+                <p class = "image2"><img src="/static/img/ch1.jpg" width="250" height = "150">
+                </p>
+            </ul>
+        </div>
+    </section>
+</h1>
 
 {% endblock %}

@@ -1,21 +1,28 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1 class="column1">Update member details</h1>
-
-<form action="/members/{{member.id}}" method="POST">
-    <div>
-        <label for ="full_name">Full name:</label>
-        <input type="text" id="full_name" name="full_name" value="{{member.full_name}}">
-        <label for ="membership_type">Membership type:</label>
-        <select id="membership_type" name="membership_type" size="2">
-            <option value="basic">Basic</option>
-            <option value="premium">Premium</option>
-        </select>
-    </div>
-    <div>
-        <input type="submit">
-    </div>
-</form>
-
+<h1 id="edit_member">Update member details
+    <section class=" column5">
+        <form action="/members/{{member.id}}" method="POST">
+            <div>
+                <label for ="full_name">Full name:</label>
+                <input type="text" id="full_name" name="full_name" value="{{member.full_name}}">
+                <label for ="membership_type">Membership type:</label>
+                <select id="membership_type" name="membership_type" size="2">
+                    <option value="basic">Basic</option>
+                    <option value="premium">Premium</option>
+                </select>
+            </div>
+            <div>
+                <input type="submit">
+            </div>
+        </form>
+        <div>
+            <ul>
+                <p class = "image2"><img src="/static/img/purpose.jpg" width="250" height = "150">
+                </p>
+            </ul>
+        </div>
+    </section>
+</h1>
 {% endblock %}

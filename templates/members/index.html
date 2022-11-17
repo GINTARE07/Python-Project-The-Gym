@@ -2,10 +2,17 @@
 {% block content %}
 
 <h1 class="column1">Members</h1>
-    <h2 class="column2">Here you can see members information</h2></h2>
-    <li>
-        <a href="/members/new"><i class="fa-solid fa-user-plus"></i></a>
-    </li>
+    <h2 id="column2">Here you can see members information
+        <li>
+            <a href="/members/new"><i class="fa-solid fa-user-plus"></i></a>
+        </li>
+        <div>
+            <ul>
+                <p class = "image2"><img src="/static/img/pic2.jpg" width="250" height = "150">
+                </p>
+            </ul>
+        </div>
+    </h2>
     {% for member in members %}
 
     <section class="column3">
@@ -19,7 +26,7 @@
         <form action="/members/{{ member.id }}/delete" method="POST">
             <input type="submit" value="Delete">
         </form>
-       
     </section>
+   
     {% endfor %}
 {% endblock %}

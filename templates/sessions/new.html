@@ -1,22 +1,30 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1 class="column1">Add a New Session</h1>
-
-<form action="/sessions" method="POST">
-    <div>
-        <label for="session">Session name:</label>
-        <input id="text" id="name" name="name">
-        <label for="part_of_day">Part of day:</label>
-        <select id="part_of_day" name="part_of_day" size="3">
-            <option value="Morning">Morning</option>
-            <option value="Afternoon">Afternoon</option>
-            <option value="Evening">Evening</option>
-        </select>
-        <label for="capacity">Capacity:</label>
-        <input id="text" id="capacity" name="capacity">
-        <input type="submit">
-    </div>
-</form>
+<h1 id="new_member">Add a New Session
+    <section class="column4">
+        <form action="/sessions" method="POST">
+            <div>
+                <label for="session">Session name:</label>
+                <input id="text" id="name" name="name">
+                <label for="part_of_day">Part of day:</label>
+                <select id="part_of_day" name="part_of_day" size="3">
+                    <option value="Morning">Morning</option>
+                    <option value="Afternoon">Afternoon</option>
+                    <option value="Evening">Evening</option>
+                </select>
+                <label for="capacity">Capacity:</label>
+                <input id="text" id="capacity" name="capacity">
+                <input type="submit">
+            </div>
+        </form>
+        <div>
+            <ul>
+                <p class = "image2"><img src="/static/img/step1.jpg" width="200" height = "200">
+                </p>
+            </ul>
+        </di
+    </section>
+</h1>
 
 {% endblock %}

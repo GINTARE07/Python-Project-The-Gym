@@ -1,19 +1,26 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1 class="column1">Add a New Member</h1>
-
-<form action="/members" method="POST">
-    <div>
-        <label for="member">Member full name:</label>
-        <input id="text" id="full_name" name="full_name">
-        <label for="membership_type">Membership type:</label>
-        <select id="membership_type" name="membership_type" size="2">
-            <option value="basic">Basic</option>
-            <option value="premium">Premium</option>
-        </select>
-        <input type="submit">
-    </div>
-</form>
-
+<h1 id="new_member">Add a New Member
+    <section class="column4">
+        <form action="/members" method="POST">
+            <div>
+                <label for="member">Member full name:</label>
+                <input id="text" id="full_name" name="full_name">
+                <label for="membership_type">Membership type:</label>
+                <select id="membership_type" name="membership_type" size="2">
+                    <option value="basic">Basic</option>
+                    <option value="premium">Premium</option>
+                </select>
+                <input type="submit">
+            </div>
+        </form>
+        <div>
+            <ul>
+                <p class = "image2"><img src="/static/img/add2.jpg" width="200" height = "200">
+                </p>
+            </ul>
+        </di
+    </section>
+</h1>
 {% endblock %}
