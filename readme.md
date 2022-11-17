@@ -4,15 +4,17 @@ Build a software to help gym management to manage members details, memberships, 
 
 MVP
 
-The app should allow the gym to register(create) new Members and edit existing members
+The app should allow the gym to register(add) new Members and edit existing members
 
 The app should allow the gym to create and edit existing Sessions
 
-<!-- The app should allow the gym to book members for specific Sessions -->
+The app should allow the gym to book members for specific Sessions
 
 The app should show a list of all upcoming Sessions
 
-<!-- The app should show all members that are booked for specific Sessions -->
+The app should show members that attended for specific Sessions
+
+
 
 Extensions
 

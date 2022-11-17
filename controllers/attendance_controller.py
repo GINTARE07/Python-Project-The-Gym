@@ -25,8 +25,8 @@ def new_attendance():
 # CREATE
 @attendance_blueprint.route("/attendances/new", methods=["POST"])
 def create_attendance():
-    member = request.form["member_id"]
-    session = request.form["session_id"]
+    member = member_repository.select(request.form["member_id"])
+    session = session_repository.select(request.form["session_id"])
     new_attendance = Attendance(member, session)
     attendance_repository.save(new_attendance)
     return redirect("/attendances")
