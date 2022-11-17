@@ -29,7 +29,7 @@ def create_session():
 
 
 # EDIT
-@sessions_blueprint.route("/sessions/<id>/edit", methods=["GET", "POST"])
+@sessions_blueprint.route("/sessions/<id>/edit", methods=["GET"])
 def edit_session(id):
     sessions = session_repository.select(id)
     return render_template("sessions/edit.html", session = sessions)

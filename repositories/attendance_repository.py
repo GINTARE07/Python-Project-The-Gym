@@ -44,9 +44,9 @@ def select(id):
      
     return attendance
 
-def update(attendances):
-    member = member_repository.select["members_id"]
-    session = session_repository.select["sessions_id"]
+def update(attendance):
+    member = attendance.member
+    session = attendance.session
     sql = "UPDATE attendances SET (member, session) = (%s, %s) WHERE id = %s"
-    values = [member.full_name, session._name, attendances.id]
+    values = [member.id, session.id, attendance.id]
     run_sql(sql, values)

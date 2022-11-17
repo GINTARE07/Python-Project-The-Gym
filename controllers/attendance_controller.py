@@ -32,7 +32,7 @@ def create_attendance():
     return redirect("/attendances")
 
 # EDIT
-@attendance_blueprint.route("/attendances/<id>/edit", methods=["GET", "POST"])
+@attendance_blueprint.route("/attendances/<id>/edit", methods=["GET"])
 def edit_attendance(id):
     attendances = attendance_repository.select(id)
     members = member_repository.select_all()
