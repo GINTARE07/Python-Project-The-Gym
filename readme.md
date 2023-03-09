@@ -21,3 +21,26 @@ The app should have a maximum capacity for Sessions, and only allow Members to b
 
 The app should allow Sessions to be filtered by part of day the happening (morning sessions, afternoon sessions, evening sessions) 
 
+
+The project was built using the following technologies:
+
+Python
+Flask
+Jinja
+HTML5
+CSS3
+PostgreSQL
+
+
+Run Locally
+
+To run the project locally, you'll need Python3, PostgresSQL and Flask installed.
+
+Run the following commands to create the database, seed with sample data and start the app:
+
+createdb gym_manager
+psql -d gym_manager -f db/gym_manager.sql
+python3 console.py
+flask run
+You can then visit http://127.0.0.1:4999/ to view and try it out!
+
